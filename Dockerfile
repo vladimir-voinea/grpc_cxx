@@ -9,7 +9,7 @@ RUN git clone --recurse-submodules -b v1.30.0 https://github.com/grpc/grpc && cd
     git submodule update --init && \
     mkdir -p cmake/build && \
     cd cmake/build && \
-    cmake -DCMAKE_BUILD_TYPE=Release -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=ON -DgRPC_SSL_PROVIDER=package ../.. && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF -DgRPC_SSL_PROVIDER=package ../.. && \
     make -j`nproc` REQUIRE_CUSTOM_LIBRARIES_opt=1 static && \
     make install && \
     cd ../.. && rm -rf /grpc
